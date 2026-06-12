@@ -1,0 +1,37 @@
+[
+  {
+    "ticket_id": "T-1001",
+    "channel": "gmail",
+    "from": "ana@example.com",
+    "subject": "Where is my order?",
+    "body": "Hi, I ordered two weeks ago and still haven't received anything. My order number is 4811230055. Can you check on it?"
+  },
+  {
+    "ticket_id": "T-1002",
+    "channel": "slack",
+    "from": "marco@example.com",
+    "subject": "Package never arrived",
+    "body": "Tracking says my package was marked delivered but it never arrived. Nothing at my door. Order #ORB-3148290771."
+  },
+  {
+    "ticket_id": "T-1003",
+    "channel": "gmail",
+    "from": "wei@example.com",
+    "subject": "Charged twice",
+    "body": "I think I was charged twice for the same thing. I see order 7813901744 and order 7813901788 on my statement and they look identical."
+  },
+  {
+    "ticket_id": "T-1004",
+    "channel": "gmail",
+    "from": "priya@example.com",
+    "subject": "Wrong item received",
+    "body": "I received the wrong item — I ordered the blue one and got a green one. I can't find my order number anywhere, sorry."
+  },
+  {
+    "ticket_id": "T-1005",
+    "channel": "slack",
+    "from": "sam@example.com",
+    "subject": "Status?",
+    "body": "Any update on order 9999999999? Haven't heard anything."
+  }
+]
