@@ -1,0 +1,231 @@
+{
+  "workflow_type": {
+    "id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+    "team_id": "fe22ab00-aaaa-4bbb-9ccc-100000000001",
+    "workflow_name": "Customer support ticket triage in Gmail/Slack with Shopify order lookup, carrier tracking verification, Known Issues lookup, and Tickets Log update",
+    "number_of_sessions": 82,
+    "number_of_repetitions": 814,
+    "automation_priority_score": 8,
+    "minutes_spent_per_workflow": 9.5,
+    "created_at": "2026-04-02T11:14:08.221034+00:00",
+    "updated_at": "2026-05-31T22:08:41.553201+00:00",
+    "dri_list": [
+      "11111111-1111-4111-8111-111111111111",
+      "22222222-2222-4222-8222-222222222222"
+    ],
+    "parent_id": null,
+    "time_spent_7days": 184.0,
+    "time_spent_30days": 779.0,
+    "reps_7days": 192,
+    "reps_30days": 814
+  },
+  "canonical_sop_steps": [
+    {
+      "id": "f00aa001-1111-4001-9001-100000000001",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Chrome (Gmail)",
+      "description": "Open Gmail label 'Support/Incoming' and scan unread threads; read the customer's message body and any prior thread context.",
+      "detailed_description": null,
+      "time_spent_minutes": 1.0,
+      "step_number": 1,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000001"]
+    },
+    {
+      "id": "f00aa002-1111-4002-9001-100000000002",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Slack desktop (channel #support-incoming)",
+      "description": "Switch to Slack and read the latest top-level messages in #support-incoming; open threads where customers have replied.",
+      "detailed_description": null,
+      "time_spent_minutes": 0.5,
+      "step_number": 2,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000002"]
+    },
+    {
+      "id": "f00aa003-1111-4003-9001-100000000003",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Chrome (Gmail or Slack)",
+      "description": "Scan the message body for the order ID; copy a 10-digit number (sometimes prefixed '#ORB-'). If multiple numbers are present, copy each. If none are found, skim earlier thread messages or signature blocks.",
+      "detailed_description": null,
+      "time_spent_minutes": 0.5,
+      "step_number": 3,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000001"]
+    },
+    {
+      "id": "f00aa004-1111-4004-9001-100000000004",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Chrome (Shopify admin)",
+      "description": "Paste the order ID into the Shopify admin search; open the order page and review line items, fulfillment status, tracking number, refund history, and prior customer notes.",
+      "detailed_description": null,
+      "time_spent_minutes": 2.0,
+      "step_number": 4,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000003"]
+    },
+    {
+      "id": "f00aa005-1111-4005-9001-100000000005",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Chrome (USPS / FedEx / UPS tracking page)",
+      "description": "If the order has shipped, copy the tracking number from the Shopify admin and paste it into the carrier's public tracking page; read the latest scan and compare against the admin's recorded status.",
+      "detailed_description": null,
+      "time_spent_minutes": 1.5,
+      "step_number": 5,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000004"]
+    },
+    {
+      "id": "f00aa006-1111-4006-9001-100000000006",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Sheets (Known Issues)",
+      "description": "Open the 'Known Issues' tab; scan the list of issue patterns to see if the current ticket matches a known pattern with a canned response template and a default escalation owner.",
+      "detailed_description": null,
+      "time_spent_minutes": 0.5,
+      "step_number": 6,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000005"]
+    },
+    {
+      "id": "f00aa007-1111-4007-9001-100000000007",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Gmail or Slack (reply composer)",
+      "description": "Compose a reply that acknowledges the customer's specific complaint, cites the current order status and last carrier scan, and proposes a concrete next action (refund, reship, escalate to carrier) with a timeline. For refunds and reships the worker first checks with a teammate or the finance/ops owner before committing. Send the reply on the same channel the ticket arrived on.",
+      "detailed_description": null,
+      "time_spent_minutes": 3.0,
+      "step_number": 7,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": [
+        "aaaaaaa1-0000-0000-0000-000000000001",
+        "aaaaaaa1-0000-0000-0000-000000000002"
+      ]
+    },
+    {
+      "id": "f00aa008-1111-4008-9001-100000000008",
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001",
+      "tool": "Google Sheets (Tickets Log)",
+      "description": "Append a new row with timestamp, channel, order_id, issue_type, action_taken, owner, and status. The worker first eyeballs the sheet to avoid logging the same ticket twice when a thread is revisited.",
+      "detailed_description": null,
+      "time_spent_minutes": 0.5,
+      "step_number": 8,
+      "automatable_score": 0,
+      "short_step_name": null,
+      "automation_details": null,
+      "created_at": "2026-04-02T11:14:08.221034+00:00",
+      "updated_at": "2026-04-02T11:14:08.221034+00:00",
+      "tool_ids": ["aaaaaaa1-0000-0000-0000-000000000005"]
+    }
+  ],
+  "sessions": [
+    {
+      "workflow_session_id": 4812094711230011001,
+      "workflow_session_human_readable_name": "Morning Gmail queue clear (where-is-my-order batch)",
+      "user_id": "11111111-1111-4111-8111-111111111111",
+      "user_info": { "user_name": "PERSON_NAME_1", "team_number": 1 },
+      "repetitions": 11,
+      "time_start": "2026-05-28T13:32:00+00:00",
+      "time_end": "2026-05-28T15:08:00+00:00",
+      "individual_sop_steps": [
+        { "tool": "Google Chrome (Gmail)", "description": "Open the 'Support/Incoming' label; read the top unread thread, mostly 'where is my order' messages." },
+        { "tool": "Google Chrome (Gmail)", "description": "Copy the 10-digit order ID from the customer's message body (e.g. 4811230055)." },
+        { "tool": "Google Chrome (Shopify admin)", "description": "Paste the order ID into Shopify admin search; open the order; note the fulfillment status and tracking number." },
+        { "tool": "Google Chrome (USPS tracking)", "description": "Paste the tracking number into the USPS public tracking page; read the latest scan and the predicted delivery date." },
+        { "tool": "Gmail (reply composer)", "description": "Reply on the existing thread with the current status, last scan location, and expected delivery date; include a sentence offering to escalate if no movement in 48h." },
+        { "tool": "Google Sheets (Tickets Log)", "description": "Append a row capturing the ticket: timestamp, gmail, order_id, 'where-is-my-order', 'replied with tracking', self, 'closed'." }
+      ],
+      "created_at": "2026-05-28T15:09:33.114290+00:00",
+      "processing_config": { "model": "gpt-5", "end_dt": "2026-05-28T16:59:59.999999+00:00", "start_dt": "2026-05-27T16:59:59.999999+00:00" },
+      "error": null,
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001"
+    },
+    {
+      "workflow_session_id": 5613287094811120002,
+      "workflow_session_human_readable_name": "Slack ticket — admin vs. carrier disagreement",
+      "user_id": "22222222-2222-4222-8222-222222222222",
+      "user_info": { "user_name": "PERSON_NAME_2", "team_number": 1 },
+      "repetitions": 1,
+      "time_start": "2026-05-29T17:46:00+00:00",
+      "time_end": "2026-05-29T18:01:00+00:00",
+      "individual_sop_steps": [
+        { "tool": "Slack desktop (channel #support-incoming)", "description": "Open a new message claiming the package was marked delivered but never arrived; note that the customer mentions order #ORB-3148290771." },
+        { "tool": "Google Chrome (Shopify admin)", "description": "Search the admin for the order; open the order page; copy the FedEx tracking number; note 'admin says: Out for Delivery'." },
+        { "tool": "Google Chrome (FedEx tracking)", "description": "Open the FedEx public tracking page with the tracking number; observe 'Delivered — 2 days ago, left at front door' which contradicts the admin's 'Out for Delivery'." },
+        { "tool": "Google Sheets (Known Issues)", "description": "Find the 'delivered-but-missing' pattern row; copy the canned response template and the escalate-to owner." },
+        { "tool": "Slack (reply composer)", "description": "Before promising anything, ping the listed escalate-to owner to confirm a reship is OK; then reply in the thread acknowledging the contradiction, sharing the FedEx scan, and offering a free reship." },
+        { "tool": "Google Sheets (Tickets Log)", "description": "Append the row: timestamp, slack, order_id, 'delivered-but-missing', 'reship initiated, escalated to OWNER_NAME_A', 'open'." }
+      ],
+      "created_at": "2026-05-29T18:02:11.992014+00:00",
+      "processing_config": { "model": "gpt-5", "end_dt": "2026-05-29T16:59:59.999999+00:00", "start_dt": "2026-05-28T16:59:59.999999+00:00" },
+      "error": null,
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001"
+    },
+    {
+      "workflow_session_id": 6710823491127730003,
+      "workflow_session_human_readable_name": "Ticket with no order ID — ask customer for it",
+      "user_id": "11111111-1111-4111-8111-111111111111",
+      "user_info": { "user_name": "PERSON_NAME_1", "team_number": 1 },
+      "repetitions": 1,
+      "time_start": "2026-05-30T10:11:00+00:00",
+      "time_end": "2026-05-30T10:17:00+00:00",
+      "individual_sop_steps": [
+        { "tool": "Google Chrome (Gmail)", "description": "Open a new 'Support/Incoming' thread; read the customer's complaint about a wrong item received; note no order ID anywhere in the body or signature." },
+        { "tool": "Google Chrome (Gmail)", "description": "Skim earlier threads from this sender to see if a recent order ID has been mentioned; none found." },
+        { "tool": "Gmail (reply composer)", "description": "Reply asking the customer for the order number (mention '#ORB-' format) and a photo of the wrong item received." },
+        { "tool": "Google Sheets (Tickets Log)", "description": "Append the row: timestamp, gmail, '(none)', 'wrong-item-received', 'awaiting order ID from customer', 'pending'." }
+      ],
+      "created_at": "2026-05-30T10:18:04.115887+00:00",
+      "processing_config": { "model": "gpt-5", "end_dt": "2026-05-30T16:59:59.999999+00:00", "start_dt": "2026-05-29T16:59:59.999999+00:00" },
+      "error": null,
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001"
+    },
+    {
+      "workflow_session_id": 7813901748213840004,
+      "workflow_session_human_readable_name": "Two order IDs in one ticket — duplicate charge complaint",
+      "user_id": "22222222-2222-4222-8222-222222222222",
+      "user_info": { "user_name": "PERSON_NAME_2", "team_number": 1 },
+      "repetitions": 1,
+      "time_start": "2026-05-30T14:02:00+00:00",
+      "time_end": "2026-05-30T14:16:00+00:00",
+      "individual_sop_steps": [
+        { "tool": "Google Chrome (Gmail)", "description": "Read a complaint that the customer was charged twice for what they believe is one order; the body mentions two 10-digit order IDs (7813901744 and 7813901788)." },
+        { "tool": "Google Chrome (Shopify admin)", "description": "Open the first order; note the line items, total, and payment status." },
+        { "tool": "Google Chrome (Shopify admin)", "description": "Open the second order; observe it contains the same line items, was placed 4 minutes after the first, and shows status 'Paid'." },
+        { "tool": "Google Sheets (Known Issues)", "description": "Scan 'Known Issues' for 'duplicate order'; find the matching row pointing to the finance owner and a refund template." },
+        { "tool": "Gmail (reply composer)", "description": "Reply on the thread confirming the duplicate, promising a refund within 5 business days for the second order, and asking the customer to confirm before the refund is initiated." },
+        { "tool": "Google Sheets (Tickets Log)", "description": "Append the row: timestamp, gmail, '7813901744 + 7813901788', 'duplicate-charge', 'refund proposed, awaiting customer confirm', 'pending'." }
+      ],
+      "created_at": "2026-05-30T14:17:42.998001+00:00",
+      "processing_config": { "model": "gpt-5", "end_dt": "2026-05-30T16:59:59.999999+00:00", "start_dt": "2026-05-29T16:59:59.999999+00:00" },
+      "error": null,
+      "workflow_type_id": "a1b2c3d4-1111-4aaa-9001-1f0e0a000001"
+    }
+  ]
+}
